@@ -1,0 +1,41 @@
+
+** Notice:
+Token '***' means that the id can be used to access to the actual person or the actual post on Facebook.
+
+** Structure of the json file:
+{SET of opp}
+opp {LIST}
+	1. id {STRING, id of the opp, ***}
+	2. name {STRING, name of the opp}
+	3. subname {STRING, subname of the opp}
+	4. label {SET, labels of the op eg. 'Cuoc thi', 'Hoc Bong', etc}
+			-  name {STRING}
+			-  name {STRING}
+			...
+	5. type {STRING, type of the opp e.g. 'link', 'video', 'event', etc}
+	6. link {STRING, link to the opp website}
+	7. deadline {LIST}
+			1. day {INT}
+			2. month {INT}
+			3. year {INT}
+			4. Exception {STRING, if day, month, year do not present}
+	8. message {STRING, details of the opp, may contain token '\n'}
+	9. likes {SET}
+			-  id {STRING, id of the person who likes, ***}
+			-  id {STRING, id of the person who likes, ***}
+			...
+	10.comments {SET}
+			-  id {STRING, id of the person who comments, ***}
+			-  id {STRING, id of the person who comments, ***}
+			...
+	11.tags {SET}
+			-  {list}
+					1. id {STRING, id of the person who is tagged in the comment section, ***} 
+					2. by {SET}
+							- id {STRING, id of the person who tags the above person, ***}
+							- id {STRING, id of the person who tags the above person, ***}
+							...
+			-  {list}
+			...
+	12.shares: {INT, number of people who share(s)}
+...
